@@ -86,4 +86,4 @@ CEND)
 else:
         final_price = old_remaining_price - new_remaining_price
         print(CRED + '____________________________________\n\n>' + CEND + CYELLOW + ' We owe ' + CEND + CYELLOWBG + '$' + str(round(final_price, 2)) + CENDEND + CYELLOW + ' to the 
-cleint.\n' + CEND)
+client.\n' + CEND)
