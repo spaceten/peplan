@@ -7,13 +7,10 @@ CEND = '\33[0m'
 CENDEND = '\x1b[0m'
 
 
-old_plan_raw = input('\n' + CRED + '>' + CEND + CYELLOW + ' Choose the ' + CEND + CREDBG + 'current plan' + CENDEND + CYELLOW + \
-                     ' (1,2 or 3) \n  (1)Private, (2)Business, (3)Business Office: ' + CEND)
-mailboxes = input('\n' + CRED + '>' + CEND + CYELLOW + ' The ' + CEND + CREDBG + 'total number of mailboxes' + CENDEND + CYELLOW + \
-                  ' (including the default one): ' + CEND)
+old_plan_raw = input('\n' + CRED + '>' + CEND + CYELLOW + ' Choose the ' + CEND + CREDBG + 'current plan' + CENDEND + CYELLOW + \ ' (1,2 or 3) \n  (1)Private, (2)Business, (3)Business Office: ' + CEND)
+mailboxes = input('\n' + CRED + '>' + CEND + CYELLOW + ' The ' + CEND + CREDBG + 'total number of mailboxes' + CENDEND + CYELLOW + \' (including the default one): ' + CEND)
 b_cycle = input('\n' + CRED + '> ' + CEND + CREDBG + 'Billing cycle' + CENDEND + CYELLOW + ' (1 or 2)\n  (1)One year, (2)Two years or more: ' + CEND)
-expiration_date = input('\n' + CRED + '> ' + CEND + CREDBG + 'Expiration date' + CENDEND + CYELLOW + ' mm' + CRED + '/' + CEND + CYELLOW + 'dd' + CRED + '/' + \
-                        CEND + CYELLOW + 'yy (paste from NC Admin): ' + CEND)
+expiration_date = input('\n' + CRED + '> ' + CEND + CREDBG + 'Expiration date' + CENDEND + CYELLOW + ' mm' + CRED + '/' + CEND + CYELLOW + 'dd' + CRED + '/' + \ CEND + CYELLOW + 'yy (paste from NC Admin): ' + CEND)
 
 import time
 from datetime import datetime, timedelta
@@ -82,10 +79,7 @@ new_remaining_price = (new_price / 365) * days
 
 if new_plan_price > old_plan_price:
         final_price = new_remaining_price - old_remaining_price
-        print(CRED + '____________________________________\n\n>' + CEND + CYELLOW + ' The client has to pay ' + \
-              CYELLOWBG + '$'  + str(round(final_price, 2)) + CENDEND  + '\n' + CEND)
+        print(CRED + '____________________________________\n\n>' + CEND + CYELLOW + ' The client has to pay ' + \ CYELLOWBG + '$'  + str(round(final_price, 2)) + CENDEND  + '\n' + CEND)
 else:
         final_price = old_remaining_price - new_remaining_price
-        print(CRED + '____________________________________\n\n>' + CEND + CYELLOW + ' We owe ' + CEND + \
-              CYELLOWBG + '$' + str(round(final_price, 2)) + CENDEND + CYELLOW + ' to the 
-client.\n' + CEND)
+        print(CRED + '____________________________________\n\n>' + CEND + CYELLOW + ' We owe ' + CEND + \ CYELLOWBG + '$' + str(round(final_price, 2)) + CENDEND + CYELLOW + ' to the client.\n' + CEND)
